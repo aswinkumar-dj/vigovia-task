@@ -1,12 +1,25 @@
 import { motion } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";
 import { fadeUp } from "../../../utils/constants";
-import { setInstallmentCount, setDueDate } from "../../../utils/paymentsSlice";
+import {
+  setInstallmentCount,
+  setDueDate,
+  setTotalAmount,
+} from "../../../utils/paymentsSlice";
 import { IndianRupee, Calendar } from "lucide-react";
 import { toggleToPayments, toggleToThankYou } from "../../../utils/userSlice";
+import { useEffect } from "react";
 
 const PaymentsStep = () => {
   const dispatch = useDispatch();
+  const flightPrice = useSelector((store) => store.flight.estimatedPrice);
+  const hotelPrice = useSelector((store) => store.hotel.estimatedPrice);
+  const cabPrice = useSelector((store) => store.cab.estimatedPrice);
+  useEffect(() => {
+    const totalPrice = flightPrice + hotelPrice + cabPrice;
+    dispatch(setTotalAmount(totalPrice));
+  }, [flightPrice, hotelPrice, cabPrice, dispatch]);
+
   const { totalAmount, installmentCount, dueDates } = useSelector(
     (state) => state.payments
   );

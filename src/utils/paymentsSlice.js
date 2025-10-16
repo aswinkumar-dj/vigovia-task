@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  totalAmount: 35000,
+  totalAmount: 0,
   installmentCount: 1,
   dueDates: [],
 };
@@ -18,8 +18,12 @@ const paymentsSlice = createSlice({
       const { index, date } = action.payload;
       state.dueDates[index] = date;
     },
+    setTotalAmount: (state, action) => {
+      state.totalAmount = action.payload;
+    },
   },
 });
 
-export const { setInstallmentCount, setDueDate } = paymentsSlice.actions;
+export const { setInstallmentCount, setDueDate, setTotalAmount } =
+  paymentsSlice.actions;
 export default paymentsSlice.reducer;

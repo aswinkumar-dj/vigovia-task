@@ -5,6 +5,7 @@ import hotelReducer from "./hotelSlice";
 import cabReducer from "./cabSlice";
 import itineraryReducer from "./itinerarySlice";
 import paymentsReducer from "./paymentsSlice";
+import tripReducer from "./tripSlice";
 
 const appStore = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ const appStore = configureStore({
     cab: cabReducer,
     itinerary: itineraryReducer,
     payments: paymentsReducer,
+    trip: tripReducer,
   },
 });
 export default appStore;

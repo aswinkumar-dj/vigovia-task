@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import NameCard from "../Features/NameCard";
 import OverView from "../Features/OverView";
 import SelectServices from "../Features/SelectServices";
+import FlightCard from "../Features/FlightCard";
 
 const ItenaryBuild = () => {
   const toggle = useSelector((store) => store.user);
@@ -22,8 +23,10 @@ const ItenaryBuild = () => {
         <NameCard />
       ) : !toggle.toggleToSelect ? (
         <OverView />
-      ) : (
+      ) : !toggle.toggleToFlight ? (
         <SelectServices />
+      ) : (
+        <FlightCard />
       )}
     </div>
   );

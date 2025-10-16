@@ -6,6 +6,9 @@ const userSlice = createSlice({
     adduser: "",
     toggleToOverview: false,
     toggleToSelect: false,
+    toggleToFlight: false,
+    toggleToHotel: false,
+    toggleToCab: false,
   },
   reducers: {
     addUser: (state, action) => {
@@ -17,8 +20,24 @@ const userSlice = createSlice({
     toggleToSelect: (state) => {
       state.toggleToSelect = !state.toggleToSelect;
     },
+    toggleToFlight: (state) => {
+      state.toggleToFlight = !state.toggleToFlight;
+    },
+    toggleToHotel: (state) => {
+      state.toggleToHotel = !state.toggleToHotel;
+    },
+    toggleToCab: (state) => {
+      state.toggleToCab = !state.toggleToCab;
+    },
   },
 });
 
-export const { addUser, toggleToOverview, toggleToSelect } = userSlice.actions;
+export const {
+  addUser,
+  toggleToOverview,
+  toggleToSelect,
+  toggleToFlight,
+  toggleToHotel,
+  toggleToCab,
+} = userSlice.actions;
 export default userSlice.reducer;

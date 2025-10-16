@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { fadeUp } from "../../../utils/constants";
-import { toggleToSelect } from "../../../utils/userSlice";
+import { toggleToFlight, toggleToSelect } from "../../../utils/userSlice";
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { Plane, Hotel, Car } from "lucide-react";
@@ -9,6 +9,9 @@ const SelectServices = () => {
   const dispatch = useDispatch();
   const toggleToTrip = () => {
     dispatch(toggleToSelect());
+  };
+  const handleToggleToFlight = () => {
+    dispatch(toggleToFlight());
   };
 
   const [selected, setSelected] = useState(() => {
@@ -98,7 +101,10 @@ const SelectServices = () => {
         >
           Previous Page
         </button>
-        <button className="px-4 py-2 bg-gradient-to-r from-[#4ba1eb] to-[#936fe0] text-white font-semibold rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 ">
+        <button
+          className="px-4 py-2 bg-gradient-to-r from-[#4ba1eb] to-[#936fe0] text-white font-semibold rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 "
+          onClick={handleToggleToFlight}
+        >
           Next Page
         </button>
       </div>

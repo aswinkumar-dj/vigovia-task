@@ -5,6 +5,7 @@ const userSlice = createSlice({
   initialState: {
     adduser: "",
     toggleToOverview: false,
+    toggleToSelect: false,
   },
   reducers: {
     addUser: (state, action) => {
@@ -13,8 +14,11 @@ const userSlice = createSlice({
     toggleToOverview: (state) => {
       state.toggleToOverview = !state.toggleToOverview;
     },
+    toggleToSelect: (state) => {
+      state.toggleToSelect = !state.toggleToSelect;
+    },
   },
 });
 
-export const { addUser, toggleToOverview } = userSlice.actions;
+export const { addUser, toggleToOverview, toggleToSelect } = userSlice.actions;
 export default userSlice.reducer;

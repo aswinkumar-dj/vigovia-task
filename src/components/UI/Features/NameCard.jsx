@@ -7,10 +7,11 @@ import { fadeUp } from "../../../utils/constants";
 const NameCard = () => {
   const personName = useRef();
   const dispatch = useDispatch();
-
+  const handleToggleToOverview = () => {
+    dispatch(toggleToOverview());
+  };
   const submitName = () => {
     dispatch(addUser(personName.current.value));
-    dispatch(toggleToOverview());
   };
 
   return (
@@ -27,12 +28,13 @@ const NameCard = () => {
           ref={personName}
           type="text"
           placeholder="Enter your Name..."
+          onChange={submitName}
           className="w-3/4 px-5 py-3 border border-[#4ba1eb] rounded-xl text-gray-700 text-lg focus:outline-none focus:ring-1 focus:ring-[#4ba1eb] placeholder-gray-400 transition-all"
         />
 
         <button
           className="mt-25 ml-185 px-4 py-2 bg-gradient-to-r from-[#4ba1eb] to-[#936fe0] text-white font-semibold rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
-          onClick={submitName}
+          onClick={handleToggleToOverview}
         >
           Next Page
         </button>

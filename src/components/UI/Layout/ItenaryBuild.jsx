@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux";
 import NameCard from "../Features/NameCard";
 import OverView from "../Features/OverView";
+import SelectServices from "../Features/SelectServices";
 
 const ItenaryBuild = () => {
-  const toggleOverview = useSelector((store) => store.user.toggleToOverview);
-  console.log(toggleOverview);
+  const toggle = useSelector((store) => store.user);
+
   return (
     <div>
       <div className="relative text-center">
@@ -17,7 +18,13 @@ const ItenaryBuild = () => {
         </h3>
       </div>
 
-      {!toggleOverview ? <NameCard /> : <OverView />}
+      {!toggle.toggleToOverview ? (
+        <NameCard />
+      ) : !toggle.toggleToSelect ? (
+        <OverView />
+      ) : (
+        <SelectServices />
+      )}
     </div>
   );
 };

@@ -3,6 +3,10 @@ import NameCard from "../Features/NameCard";
 import OverView from "../Features/OverView";
 import SelectServices from "../Features/SelectServices";
 import FlightCard from "../Features/FlightCard";
+import HotelCard from "../Features/HotelCard";
+import CabCard from "../Features/CabCard";
+import DailyItineraryStep from "../Features/DailyItenaryStep";
+import PaymentsStep from "../Features/PaymentsStep";
 
 const ItenaryBuild = () => {
   const toggle = useSelector((store) => store.user);
@@ -25,8 +29,16 @@ const ItenaryBuild = () => {
         <OverView />
       ) : !toggle.toggleToFlight ? (
         <SelectServices />
-      ) : (
+      ) : !toggle.toggleToHotel ? (
         <FlightCard />
+      ) : !toggle.toggleToCab ? (
+        <HotelCard />
+      ) : !toggle.toggleToActivities ? (
+        <CabCard />
+      ) : !toggle.toggleToPayments ? (
+        <DailyItineraryStep />
+      ) : (
+        <PaymentsStep />
       )}
     </div>
   );

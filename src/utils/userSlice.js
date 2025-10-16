@@ -9,6 +9,8 @@ const userSlice = createSlice({
     toggleToFlight: false,
     toggleToHotel: false,
     toggleToCab: false,
+    toggleToActivities: false,
+    toggleToPayments: false,
   },
   reducers: {
     addUser: (state, action) => {
@@ -29,6 +31,12 @@ const userSlice = createSlice({
     toggleToCab: (state) => {
       state.toggleToCab = !state.toggleToCab;
     },
+    toggleToActivities: (state) => {
+      state.toggleToActivities = !state.toggleToActivities;
+    },
+    toggleToPayments: (state) => {
+      state.toggleToPayments = !state.toggleToPayments;
+    },
   },
 });
 
@@ -39,5 +47,7 @@ export const {
   toggleToFlight,
   toggleToHotel,
   toggleToCab,
+  toggleToActivities,
+  toggleToPayments,
 } = userSlice.actions;
 export default userSlice.reducer;

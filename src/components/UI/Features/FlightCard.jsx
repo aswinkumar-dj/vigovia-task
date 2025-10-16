@@ -8,7 +8,7 @@ import {
   Plane,
   User,
 } from "lucide-react";
-import { toggleToFlight } from "../../../utils/userSlice";
+import { toggleToFlight, toggleToHotel } from "../../../utils/userSlice";
 import { setFlightDetails, updatePrice } from "../../../utils/flightSlice";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -25,6 +25,9 @@ const FlightCard = () => {
 
   const handleToggleToSelect = () => {
     dispatch(toggleToFlight());
+  };
+  const handleToggleToHotel = () => {
+    dispatch(toggleToHotel());
   };
 
   return (
@@ -147,7 +150,10 @@ const FlightCard = () => {
         >
           Previous Page
         </button>
-        <button className="px-4 py-2 bg-gradient-to-r from-[#4ba1eb] to-[#936fe0] text-white font-semibold rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 ">
+        <button
+          className="px-4 py-2 bg-gradient-to-r from-[#4ba1eb] to-[#936fe0] text-white font-semibold rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300 "
+          onClick={handleToggleToHotel}
+        >
           Next Page
         </button>
       </div>

@@ -103,7 +103,7 @@ const DailyItineraryStep = () => {
         </button>
       </div>
 
-      <div className="pt-12 pl-10 pr-15 mb-12 flex justify-between items-center">
+      <div className="pt-12 pl-10 pr-6 mb-12 flex justify-between items-center">
         <button
           className="px-4 py-2 border border-[#936fe0] text-[#4ba1eb] font-semibold rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
           onClick={handleToggleToCab}

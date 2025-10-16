@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fadeUp } from "../../../utils/constants";
 import { setInstallmentCount, setDueDate } from "../../../utils/paymentsSlice";
 import { IndianRupee, Calendar } from "lucide-react";
-import { toggleToPayments } from "../../../utils/userSlice";
+import { toggleToPayments, toggleToThankYou } from "../../../utils/userSlice";
 
 const PaymentsStep = () => {
   const dispatch = useDispatch();
@@ -19,6 +19,9 @@ const PaymentsStep = () => {
   };
   const handleToggleToActivities = () => {
     dispatch(toggleToPayments());
+  };
+  const handleToggleToThankYou = () => {
+    dispatch(toggleToThankYou());
   };
 
   return (
@@ -130,8 +133,11 @@ const PaymentsStep = () => {
         >
           Previous Page
         </button>
-        <button className="px-4 py-2 bg-gradient-to-r from-[#4ba1eb] to-[#936fe0] text-white font-semibold rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
-          Generate Pdf
+        <button
+          className="px-4 py-2 bg-gradient-to-r from-[#4ba1eb] to-[#936fe0] text-white font-semibold rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
+          onClick={handleToggleToThankYou}
+        >
+          Next Page
         </button>
       </div>
     </motion.div>

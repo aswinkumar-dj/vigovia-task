@@ -7,6 +7,7 @@ import HotelCard from "../Features/HotelCard";
 import CabCard from "../Features/CabCard";
 import DailyItineraryStep from "../Features/DailyItenaryStep";
 import PaymentsStep from "../Features/PaymentsStep";
+import ThankYouCard from "../Features/ThankYouCard";
 
 const ItenaryBuild = () => {
   const toggle = useSelector((store) => store.user);
@@ -37,8 +38,10 @@ const ItenaryBuild = () => {
         <CabCard />
       ) : !toggle.toggleToPayments ? (
         <DailyItineraryStep />
-      ) : (
+      ) : !toggle.toggleToThankYou ? (
         <PaymentsStep />
+      ) : (
+        <ThankYouCard />
       )}
     </div>
   );

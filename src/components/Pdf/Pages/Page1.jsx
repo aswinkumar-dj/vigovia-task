@@ -17,7 +17,7 @@ const Page1 = () => {
   const tripDetails = useSelector((store) => store.trip);
   console.log(userName);
   return (
-    <div className="w-[794px] h-[1123px] px-[45px] py-[30px]  bg-white mx-auto my-8 flex flex-col">
+    <div className="pdf-page w-[794px] h-[1123px] px-[45px] py-[30px]  bg-white mx-auto my-8 flex flex-col">
       <div className="flex flex-col items-center space-y-2">
         <img src={logo} alt="logo" className="w-45 " />
         <div className="w-[700px] h-[170px] flex flex-col items-center bg-gradient-to-r from-[#4ba1eB] to-[#936fe0] rounded-2xl">

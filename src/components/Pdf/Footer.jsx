@@ -1,8 +1,6 @@
 import React from "react";
 import logo from "../../assets/logo.png";
 
-// Placeholder logo component - replace with: import logo from "../../assets/logo.png";
-
 const Footer = () => {
   return (
     <div className="w-full bg-white  py-6 px-8">

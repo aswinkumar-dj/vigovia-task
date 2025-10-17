@@ -2,6 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import HotelSummary from "../Pdfcomponents/HotelSummary";
 import CabSummary from "../Pdfcomponents/CabSummary";
+import Services from "../Pdfcomponents/Services";
+import Footer from "../Footer";
 
 const Page2 = () => {
   const flightDetails = useSelector((store) => store.flight);
@@ -47,6 +49,10 @@ const Page2 = () => {
       </div>
       <HotelSummary />
       <CabSummary />
+      <Services />
+      <div className="mt-6 border-t border-gray-400">
+        <Footer />
+      </div>
     </div>
   );
 };

@@ -1,8 +1,10 @@
 import React from "react";
+import PaymentPlan from "../Pdfcomponents/PaymentPlan";
+import Footer from "../Footer";
 
 const Page3 = () => {
   return (
-    <div className="w-[794px] h-[1123px] px-[45px] py-[30px] border border-black bg-white mx-auto my-8 flex flex-col">
+    <div className="w-[794px] h-[1123px] px-[45px] py-[30px]  bg-white mx-auto my-8 flex flex-col">
       <div className="mt-6">
         <h2 className="text-2xl font-bold mb-4">
           Inclusion <span className="text-purple-600">Summary</span>
@@ -26,7 +28,7 @@ const Page3 = () => {
               </tr>
             </thead>
             <tbody>
-              <tr className="bg-purple-50">
+              <tr className="bg-[#f9eeff]">
                 <td className="px-4 py-3 text-sm text-gray-900  text-center ">
                   Flight
                 </td>
@@ -40,7 +42,7 @@ const Page3 = () => {
                   Confirmed
                 </td>
               </tr>
-              <tr className="bg-purple-50">
+              <tr className="bg-[#f9eeff]">
                 <td className="px-4 py-3 text-sm text-gray-900  text-center ">
                   Cab
                 </td>
@@ -54,7 +56,7 @@ const Page3 = () => {
                   Confirmed
                 </td>
               </tr>
-              <tr className="bg-purple-50">
+              <tr className="bg-[#f9eeff]">
                 <td className="px-4 py-3 text-sm text-gray-900 rounded-b-2xl text-center ">
                   Hotel
                 </td>
@@ -81,6 +83,10 @@ const Page3 = () => {
             </p>
           </div>
         </div>
+      </div>
+      <PaymentPlan />
+      <div className="mt-40 border-t border-gray-400">
+        <Footer />
       </div>
     </div>
   );

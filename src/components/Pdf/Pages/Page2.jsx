@@ -8,7 +8,7 @@ import Footer from "../Footer";
 const Page2 = () => {
   const flightDetails = useSelector((store) => store.flight);
   return (
-    <div className="w-[794px] h-[1123px] px-[45px] py-[30px] border border-black bg-white mx-auto my-8 flex flex-col">
+    <div className="w-[794px] h-[1123px] px-[45px] py-[30px]  bg-white mx-auto my-8 flex flex-col">
       <div>
         <h2 className="text-2xl font-bold mb-4">
           Flight <span className="text-purple-600">Summary</span>

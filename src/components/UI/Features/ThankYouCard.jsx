@@ -1,13 +1,16 @@
 import { motion } from "framer-motion";
 import { fadeUp } from "../../../utils/constants";
 import { useDispatch } from "react-redux";
-import { toggleToThankYou } from "../../../utils/userSlice";
+import { toggleToPage, toggleToThankYou } from "../../../utils/userSlice";
 
 const ThankYouCard = () => {
   const dispatch = useDispatch();
 
   const handleToggleToBack = () => {
     dispatch(toggleToThankYou());
+  };
+  const handleToggleToPage = () => {
+    dispatch(toggleToPage());
   };
 
   return (
@@ -20,7 +23,10 @@ const ThankYouCard = () => {
       </h1>
 
       <div className="flex justify-center gap-6">
-        <button className="px-5 py-2 bg-gradient-to-r from-[#4ba1eb] to-[#936fe0] text-white font-semibold rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300">
+        <button
+          className="px-5 py-2 bg-gradient-to-r from-[#4ba1eb] to-[#936fe0] text-white font-semibold rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300"
+          onClick={handleToggleToPage}
+        >
           ↘ Generate Itinerary PDF
         </button>
 

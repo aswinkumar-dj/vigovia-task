@@ -12,7 +12,6 @@ const userSlice = createSlice({
     toggleToActivities: false,
     toggleToPayments: false,
     toggleToThankYou: false,
-    toggleToPage: false,
   },
   reducers: {
     addUser: (state, action) => {
@@ -42,9 +41,6 @@ const userSlice = createSlice({
     toggleToThankYou: (state) => {
       state.toggleToThankYou = !state.toggleToThankYou;
     },
-    toggleToPage: (state) => {
-      state.toggleToPage = !state.toggleToPage;
-    },
   },
 });
 
@@ -58,6 +54,5 @@ export const {
   toggleToActivities,
   toggleToPayments,
   toggleToThankYou,
-  toggleToPage,
 } = userSlice.actions;
 export default userSlice.reducer;

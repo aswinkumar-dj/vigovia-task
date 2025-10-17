@@ -5,9 +5,7 @@ import {
   HeartPulse,
   Hotel,
   IdCardIcon,
-  Plane,
   PlaneIcon,
-  VectorSquare,
 } from "lucide-react";
 import DayActivities from "../Pdfcomponents/DayActivities";
 import Footer from "../../Pdf/Footer";
@@ -15,7 +13,6 @@ import Footer from "../../Pdf/Footer";
 const Page1 = () => {
   const userName = useSelector((store) => store.user.adduser);
   const tripDetails = useSelector((store) => store.trip);
-  console.log(userName);
   return (
     <div className="pdf-page w-[794px] h-[1123px] px-[45px] py-[30px]  bg-white mx-auto my-8 flex flex-col">
       <div className="flex flex-col items-center space-y-2">

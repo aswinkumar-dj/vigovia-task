@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import HotelSummary from "../Pdfcomponents/HotelSummary";
 
 const Page2 = () => {
   const flightDetails = useSelector((store) => store.flight);
@@ -43,6 +44,7 @@ const Page2 = () => {
           20kg/25Kg checked baggage.
         </p>
       </div>
+      <HotelSummary />
     </div>
   );
 };
